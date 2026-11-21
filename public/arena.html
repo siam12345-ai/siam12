@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b2b">
+<title>Career Arena · CareerLaunch Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/arena.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><a class="brand" href="/arena.html"><span class="brand-mark">C</span><span>career<span class="brand-light">launch</span><small>CAREER ARENA</small></span></a><div class="top-right"><span class="streak" id="top-streak">⚡ 0 day streak</span><button id="account-btn" class="avatar" aria-label="Account">S</button></div></header>
+<main class="main-content">
+<section class="screen active" id="screen-home">
+<div class="welcome-row"><div><p class="kicker">YOUR CAREER, YOUR NEXT LEVEL</p><h1>Build skills.<br><em>Prove progress.</em></h1><p class="subcopy">Small challenges today. A stronger career tomorrow.</p></div><div class="hero-orbit"><div class="orbit-ring"></div><div class="orbit-core">LVL<br><b id="level-number">01</b></div><span class="orbit-dot"></span></div></div>
+<section class="daily-card"><div class="daily-top"><span class="daily-label">✦ TODAY'S CHALLENGE</span><span class="difficulty" id="daily-level">EASY · 10 XP</span></div><h2 id="daily-title">Loading your next challenge…</h2><p id="daily-question">A quick brain warm-up is on its way.</p><button class="lime-btn" id="daily-start">Start challenge <span>↗</span></button><div class="daily-foot"><span>⏱ 2–4 min</span><span>One step at a time</span></div></section>
+<div class="section-heading"><div><p class="kicker">YOUR MOMENTUM</p><h2>Progress that counts</h2></div><button class="text-link" data-screen="progress">See all ↗</button></div>
+<div class="stats-row"><article class="metric"><span class="metric-icon">◈</span><b id="stat-points">0</b><small>XP earned</small></article><article class="metric"><span class="metric-icon">✓</span><b id="stat-accuracy">0%</b><small>Accuracy</small></article><article class="metric"><span class="metric-icon">⚡</span><b id="stat-streak">0</b><small>Day streak</small></article></div>
+<div class="section-heading"><div><p class="kicker">PICK YOUR NEXT MOVE</p><h2>Choose a skill path</h2></div><button class="text-link" data-screen="learn">Explore all ↗</button></div>
+<div class="topic-grid" id="home-topics"></div>
+</section>
+<section class="screen" id="screen-learn">
+<div class="page-heading"><p class="kicker">PRACTICE MAKES PROGRESS</p><h1>Skill paths<span>.</span></h1><p class="subcopy">Choose a topic, solve a challenge, and build your skill record.</p></div>
+<div class="filter-pills" id="topic-filters"><button class="filter active" data-topic="All">All topics</button><button class="filter" data-topic="String">String</button><button class="filter" data-topic="Array">Array</button><button class="filter" data-topic="Stack">Stack</button><button class="filter" data-topic="Searching">Searching</button></div>
+<div class="challenge-list" id="challenge-list"></div>
+</section>
+<section class="screen" id="screen-stack">
+<div class="page-heading"><p class="kicker">INTERACTIVE DATA STRUCTURE LAB</p><h1>Stack playground<span>.</span></h1><p class="subcopy">Push, pop, and peek. Watch Last In, First Out happen in real time.</p></div>
+<div class="stack-panel"><div class="stack-toolbar"><span class="live-label"><i></i> LIVE VISUALIZER</span><span class="stack-count" id="stack-count">0 / 6 items</span></div><div class="stack-stage"><div class="stack-label top-label">TOP · LAST IN</div><div class="stack-items" id="stack-items"><div class="stack-empty">Your stack is empty<br><small>Push an item to begin</small></div></div><div class="stack-base"></div><div class="stack-label bottom-label">BOTTOM · FIRST IN</div></div>
+<div class="push-row"><input id="stack-input" maxlength="12" placeholder="Type a value…" autocomplete="off"><button class="lime-btn" id="push-btn">＋ Push</button></div><div class="stack-actions"><button class="outline-btn" id="pop-btn">↧ Pop</button><button class="outline-btn" id="peek-btn">◎ Peek</button><button class="ghost-btn" id="clear-stack">Reset</button></div><p class="stack-message" id="stack-message" aria-live="polite">Try pushing 3 values, then pop one.</p></div>
+<div class="concept-strip"><b>Why this matters</b><p>Stacks power undo actions, browser history, function calls, and expression parsing. The last item added is the first one removed.</p></div>
+</section>
+<section class="screen" id="screen-progress">
+<div class="page-heading"><p class="kicker">YOUR PERSONAL SKILL RECORD</p><h1>My progress<span>.</span></h1><p class="subcopy">Every number below comes from your saved practice activity.</p></div>
+<div class="progress-hero"><div><span class="kicker">TOTAL EXPERIENCE</span><b id="progress-xp">0 XP</b><small id="progress-level">Level 1 · Just getting started</small></div><div class="xp-ring"><b id="xp-percent">0%</b><small>to next level</small></div></div>
+<div class="progress-stats"><div><b id="progress-attempts">0</b><small>Attempts</small></div><div><b id="progress-correct">0</b><small>Correct</small></div><div><b id="progress-accuracy">0%</b><small>Accuracy</small></div></div>
+<div class="section-heading"><div><p class="kicker">TOPIC BREAKDOWN</p><h2>Your skill map</h2></div></div><div class="skill-breakdown" id="skill-breakdown"></div>
+<div class="section-heading"><div><p class="kicker">RECENT ACTIVITY</p><h2>Practice history</h2></div></div><div class="activity-list" id="activity-list"></div>
+</section>
+</main>
+<nav class="bottom-nav" aria-label="Main navigation"><button class="nav-tab active" data-screen="home"><span>⌂</span>Home</button><button class="nav-tab" data-screen="learn"><span>◈</span>Learn</button><button class="nav-tab" data-screen="stack"><span>▤</span>Stack Lab</button><button class="nav-tab" data-screen="progress"><span>↗</span>Progress</button></nav>
+</div>
+<dialog id="challenge-dialog"><form method="dialog" class="challenge-modal"><button class="modal-close" id="modal-close" aria-label="Close">×</button><p class="kicker" id="modal-topic">STRING · EASY</p><h2 id="modal-title">Challenge title</h2><p id="modal-question" class="modal-question"></p><div id="modal-options" class="answer-options"></div><div id="answer-feedback" class="answer-feedback hidden"></div><button type="button" id="submit-answer" class="lime-btn full-btn">Check answer</button><button type="button" id="next-challenge" class="outline-btn full-btn hidden">Back to challenges</button></form></dialog>
+<div class="toast" id="toast" role="status"></div>
+<script src="/arena.js" defer></script>
+</body></html>

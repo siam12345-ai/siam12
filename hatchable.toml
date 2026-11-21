@@ -13,3 +13,7 @@ write = "own"
 [db.tables.interviews]
 read = "own"
 write = "own"
+
+[db.tables.career_attempts]
+read = "own"
+write = "own"
