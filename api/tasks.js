@@ -5,7 +5,7 @@ const titles=['Find a business idea you can test this week','Choose your first c
 export default async function(req,res){
  const uid=req.user.id;
  if(req.method==='GET'){
-  for(let i=0;i<titles.length;i++) await db.query('INSERT INTO business_tasks(user_id,prompt_number,title,status) VALUES($1,$2,$3,$4) ON CONFLICT(user_id,prompt_number) DO NOTHING',[uid,i+1,titles[i],i<2?'completed':'not_started']);
+  for(let i=0;i<titles.length;i++) await db.query('INSERT INTO business_tasks(user_id,prompt_number,title,status) VALUES($1,$2,$3,$4) ON CONFLICT(user_id,prompt_number) DO NOTHING',[uid,i+1,titles[i],i<3?'completed':'not_started']);
   const {rows}=await db.query('SELECT prompt_number,title,status,notes,updated_at FROM business_tasks WHERE user_id=$1 ORDER BY prompt_number',[uid]);return res.json({tasks:rows});
  }
  const b=req.body||{};if(!Number.isInteger(Number(b.prompt_number))||Number(b.prompt_number)<1||Number(b.prompt_number)>25)return res.status(400).json({error:'Valid prompt_number (1–25) is required'});
