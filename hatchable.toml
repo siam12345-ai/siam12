@@ -1,3 +1,15 @@
 [auth]
 enabled = true
 providers = ["email"]
+
+[db.tables.business_tasks]
+read = "own"
+write = "own"
+
+[db.tables.customers]
+read = "own"
+write = "own"
+
+[db.tables.interviews]
+read = "own"
+write = "own"
